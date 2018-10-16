@@ -20,9 +20,9 @@ def crawler(url, path):
 
     #Download the content and create a file into path
     os.chdir(path)
-    file = open(str(counter)+".txt", "w")
+    file = open(str(counter)+".txt", "w", encoding = "utf-8")
     file.write(html_content)
-    file.close
+    file.close()
 
     #Adds into dictionary for indexing
     dictionary[counter] = url
@@ -77,7 +77,7 @@ def crawlerMethod(method):
     
         #Download the content and create a file into path
         os.chdir(path)
-        file = open(str(counter)+".txt", "w")
+        file = open(str(counter)+".txt", "w", encoding = "utf-8")
         file.write(html_content)
         file.close
 
@@ -128,7 +128,7 @@ def crawlerMethod(method):
     
         #Download the content and create a file into path
         os.chdir(path)
-        file = open(str(counter)+".txt", "w")
+        file = open(str(counter)+".txt", "w", encoding = "utf-8")
         file.write(html_content)
         file.close
 
@@ -187,7 +187,7 @@ content = ""
 for item in dictionary:
     content += str(item) +  ':' + dictionary[item] + "\n"
 
-with open("index.dat", "w") as file:
+with open("index.dat", "w", encoding = "utf-8") as file:
     file.write(content)
 
 #print(content)
